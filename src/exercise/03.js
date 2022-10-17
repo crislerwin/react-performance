@@ -31,6 +31,7 @@ function Menu({
   )
 }
 // 🐨 Memoize the Menu here using React.memo
+Menu = React.memo(Menu)
 
 function ListItem({
   getItemProps,
@@ -56,6 +57,8 @@ function ListItem({
     />
   )
 }
+
+ListItem = React.memo(ListItem)
 // 🐨 Memoize the ListItem here using React.memo
 
 function App() {
@@ -89,7 +92,6 @@ function App() {
       ),
     itemToString: item => (item ? item.name : ''),
   })
-
   return (
     <div className="city-app">
       <button onClick={forceRerender}>force rerender</button>
